@@ -117,7 +117,7 @@ public class Transaksi extends Laporan {
 
                 } while (saldo < sisa || saldo <= 0);
                 
-                System.out.println("Total: " + (client.getSaldo(idClient) - total));
+                System.out.println("\n Saldo anda " + (client.getSaldo(idClient) - total));
             }
 
             System.out.println("Apakah anda ingin melakukan transaksi lagi? [Y/N]");

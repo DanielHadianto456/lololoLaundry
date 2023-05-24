@@ -34,7 +34,10 @@ public class Laporan {
         System.out.println();
         System.out.println("Laporan Transaksi");
         System.out.println();
-        System.out.println("Jenis Layanan \tQty \tHarga \tJumlah");
+        System.out.println("Jenis Layanan \tQty \tHarga \tDurasi");
+        for (int i = 0; i < x; i++) {
+            
+        }
         
         
 

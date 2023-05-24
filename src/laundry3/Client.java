@@ -3,7 +3,7 @@ package laundry3;
 import java.util.ArrayList;
 
 public class Client implements User {
-
+    
     private ArrayList<String> namaClient = new ArrayList<String>();
     private ArrayList<String> alamat = new ArrayList<String>();
     private ArrayList<String> telepon = new ArrayList<String>();
