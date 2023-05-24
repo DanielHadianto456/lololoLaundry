@@ -29,16 +29,21 @@ public class Laporan {
     }
 
     public void laporan(Transaksi transaksi, JenisLaundry jenislaundry) {
-        int x = transaksi.getJmlTransaksi();
+        int x = transaksi.getJmlTransaksi(), kali = 0, total = 0;
 
         System.out.println();
         System.out.println("Laporan Transaksi");
         System.out.println();
-        System.out.println("Jenis Layanan \tQty \tHarga \tDurasi");
+        System.out.println("Jenis Layanan\tQty\tHarga\tDurasi\tTotal");
+        
         for (int i = 0; i < x; i++) {
+            kali = jenislaundry.getHarga(transaksi.getIdJenisLaundry(i)) * transaksi.getBanyaknya(i);
+            System.out.println(jenislaundry.getJenisLaundry(transaksi.getIdJenisLaundry(i)) + "\t" + transaksi.getBanyaknya(i) + "\t" + jenislaundry.getHarga(transaksi.getIdJenisLaundry(i)) + "\t" + jenislaundry.getDurasi(transaksi.getIdJenisLaundry(i)) + "\t" + kali);
             
+            total += kali;
         }
         
+        System.out.println("Total Semua: " + total);
         
 
 //        int total = 0;
