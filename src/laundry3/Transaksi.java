@@ -26,6 +26,7 @@ public class Transaksi extends Laporan {
 //        this.idJenisLaundry.add(2);
 //        this.banyak.add(2);
 //    }
+    
     public void prosesTransaksi(Client client, Transaksi transaksi, JenisLaundry laundry) {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Selamat datang di C0in Laundry!");
@@ -33,8 +34,8 @@ public class Transaksi extends Laporan {
 
         int i = 0, pilih1 = 0, kiloan = 0, total = 0, saldo = 0, sisa = 0, idClient = 0;
         String konfirmasi;
-        ArrayList<Integer> idJenisLaundry = new ArrayList<Integer>();
-        ArrayList<Integer> banyak = new ArrayList<Integer>();
+//        ArrayList<Integer> idJenisLaundry = new ArrayList<Integer>();
+//        ArrayList<Integer> banyak = new ArrayList<Integer>();
 
         do {
             System.out.print("\nMasukkan ID Member = ");
@@ -54,6 +55,7 @@ public class Transaksi extends Laporan {
         do {
             konfirmasi = "";
             do {
+                this.idClient.add(idClient);
                 System.out.print("\nMasukkan kode jenis layanan: ");
                 pilih1 = myObj.nextInt();
                 idJenisLaundry.add(pilih1);
@@ -69,6 +71,8 @@ public class Transaksi extends Laporan {
 
                 if (kiloan > 5 || kiloan < 1) {
                     System.out.println("Masukkan input yang benar.");
+                } else {
+                    banyak.add(kiloan);
                 }
             } while (kiloan > 5 || kiloan < 1);
 
@@ -91,7 +95,11 @@ public class Transaksi extends Laporan {
             System.out.println("Total Transaksi belanja " + client.getNama(idClient) + ""
                     + " sebagai beriktt: " + total);
 
-            this.idJenisLaundry.add(pilih1);
+//            for (int j = 0; j < idJenisLaundry.size(); j++) {
+//                this.idJenisLaundry.add(j);
+//                this.banyak.add(j);
+//                this.idClient.add(idClient);
+//            }
 
             //        int x = idJenisLaundry.size();
             //        for (int j = 0; j < x; j++) {
@@ -100,6 +108,8 @@ public class Transaksi extends Laporan {
             //            System.out.println(laundry.getJenisLaundry(idJenisLaundry.get(j)) + "\t" + idJenisLaundry.get(j) + "\t" + laundry.getHarga(idJenisLaundry.get(j)) + "\t" + jumlah);
             //            transaksi.setTransaksi(laundry, idClient, idJenisLaundry.get(j), banyak.get(j));
             //        }
+            
+            /* topup saldo */
             if (total > client.getSaldo(idClient)) {
                 sisa = total - client.getSaldo(idClient);
                 System.out.println("\nSaldo anda kurang mencukupi, silahkan isi saldo anda.");
